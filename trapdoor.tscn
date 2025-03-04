@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b50yru7cpjqrj"]
+
+[ext_resource type="Texture2D" uid="uid://cu4avs7taw22l" path="res://Trap Door Sprite Sheet.svg" id="1_0k13j"]
+[ext_resource type="Script" path="res://trapdoor.cs" id="1_u70cr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlj3e"]
+atlas = ExtResource("1_0k13j")
+region = Rect2(0, 0, 214, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir5ib"]
+atlas = ExtResource("1_0k13j")
+region = Rect2(386, 0, 214, 248)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8gev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlj3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir5ib")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 5.0
+}]
+
+[node name="Trapdoor" type="Area2D"]
+position = Vector2(0, -2)
+script = ExtResource("1_u70cr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w8gev")
+animation = &"open_door"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-105, 32, -18, -16, 106, 56, 106, 69, 20, 115, -105, 43)
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = 62.0
+offset_top = -26.0
+offset_right = 249.0
+offset_bottom = -3.0
+text = "Press [Enter] to descend"

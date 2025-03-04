@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3f0nsfrdbis0"]
+[gd_scene load_steps=5 format=3 uid="uid://c3f0nsfrdbis0"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_jprba"]
 [ext_resource type="Texture2D" uid="uid://cbfr0l0um8hmy" path="res://playerSprite.svg" id="2_vpugh"]
-[ext_resource type="PackedScene" uid="uid://cdlouey2rp08d" path="res://shield.tscn" id="3_2mm64"]
 [ext_resource type="PackedScene" uid="uid://cq3f0rolhemy0" path="res://sword.tscn" id="4_v71o6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qoxl3"]
 size = Vector2(50, 138)
 
 [node name="Player" type="Area2D"]
+scale = Vector2(1.66083, 1.37576)
 script = ExtResource("1_jprba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,10 +20,12 @@ texture = ExtResource("2_vpugh")
 position = Vector2(-1, -5)
 shape = SubResource("RectangleShape2D_qoxl3")
 
-[node name="Shield" parent="." instance=ExtResource("3_2mm64")]
-position = Vector2(-51, -28)
-
 [node name="Sword" parent="." instance=ExtResource("4_v71o6")]
-position = Vector2(18, -3)
-rotation = -0.515186
+position = Vector2(47.5665, 0)
+rotation = -0.106248
 scale = Vector2(0.68, 1)
+
+[node name="HandPosition" type="Marker2D" parent="."]
+position = Vector2(19, -3)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

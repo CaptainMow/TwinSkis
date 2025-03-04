@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7fgcg8cmn8"]
+
+[ext_resource type="Script" path="res://Ghost.cs" id="1_spaw5"]
+[ext_resource type="PackedScene" uid="uid://6ukm3bwt7r20" path="res://dialogue_overlay.tscn" id="2_bodvd"]
+[ext_resource type="Texture2D" uid="uid://cvdvjulqxuigm" path="res://Ghost Enemy Asset.svg" id="2_hhhv3"]
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_spaw5")
+DialogueScene = ExtResource("2_bodvd")
+
+[node name="OrbCooldown" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.418467, 0.277252)
+texture = ExtResource("2_hhhv3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-7, -88, 13, -81, 26, -56, 48, -27, 70, 21, 109, 30, 90, 65, 20, 82, -30, 80, -70, 64, -109, 43, -105, 22, -74, 15, -60, -33, -40, -56, -26, -80)
+
+[node name="Damaged" type="Timer" parent="."]
+wait_time = 0.365
+
+[connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]

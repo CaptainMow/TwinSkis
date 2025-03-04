@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ukm3bwt7r20"]
+
+[ext_resource type="Texture2D" uid="uid://cegt6k4mf4wtk" path="res://Detective Asset.png" id="1_8psfq"]
+[ext_resource type="Script" path="res://dialogueOverlay.cs" id="1_vr2g5"]
+[ext_resource type="PackedScene" uid="uid://b1yrvek7ghwfc" path="res://fade_out.tscn" id="2_ar45p"]
+[ext_resource type="Texture2D" uid="uid://cq1jn0hxjbivf" path="res://Ghost Enemy Asset.png" id="3_vowlx"]
+
+[node name="DialogueOverlay" type="CanvasLayer"]
+script = ExtResource("1_vr2g5")
+fadeOutScene = ExtResource("2_ar45p")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+offset_left = 11.0
+offset_top = 769.0
+offset_right = 51.0
+offset_bottom = 809.0
+scale = Vector2(48.56, 5.88)
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.0411863, 0.653061)
+
+[node name="DetectiveTexture" type="TextureRect" parent="Control"]
+z_index = -1
+offset_left = -177.0
+offset_top = 369.0
+offset_right = 1027.0
+offset_bottom = 2054.0
+scale = Vector2(0.62421, 0.585657)
+texture = ExtResource("1_8psfq")
+
+[node name="GhostTexture" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 6.0
+offset_right = 1203.0
+offset_bottom = 639.0
+texture = ExtResource("3_vowlx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.331

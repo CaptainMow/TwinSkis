@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dau8c3qpok82p"]
+
+[ext_resource type="Script" path="res://GameOverlay.cs" id="1_5upit"]
+[ext_resource type="PackedScene" uid="uid://db2ro0frfig3g" path="res://FullHeart.tscn" id="2_fnuh1"]
+[ext_resource type="PackedScene" uid="uid://h7a5p0lec71t" path="res://EmptyHeart.tscn" id="3_mn85c"]
+
+[node name="GameOverlay" type="CanvasLayer"]
+script = ExtResource("1_5upit")
+fullHeartScene = ExtResource("2_fnuh1")
+emptyHeartScene = ExtResource("3_mn85c")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -474.0
+offset_right = 26.0
+offset_bottom = -474.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.640001, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.312502, 0.159998)

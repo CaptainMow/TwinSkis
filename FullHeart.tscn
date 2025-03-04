@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://db2ro0frfig3g"]
+
+[ext_resource type="Texture2D" uid="uid://ckb1varnsd6v8" path="res://Health Bar Asset Empty.svg" id="1_cfm7e"]
+
+[node name="FullHeart" type="TextureRect"]
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 354.0
+offset_bottom = 461.0
+scale = Vector2(0.0225645, 0.0205629)
+texture = ExtResource("1_cfm7e")

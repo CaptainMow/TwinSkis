@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cltxpupg03gjm"]
+
+[ext_resource type="Script" path="res://newspaper.cs" id="1_d2jim"]
+[ext_resource type="Texture2D" uid="uid://c2n5euuqpq64g" path="res://Newspaper Asset.png" id="1_xg0id"]
+
+[node name="Newspaper" type="CanvasLayer"]
+script = ExtResource("1_d2jim")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 347.0
+offset_top = -64.0
+offset_right = 1692.0
+offset_bottom = 1028.0
+texture = ExtResource("1_xg0id")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 9.105

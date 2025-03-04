@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxtq5gx3pnpys"]
+
+[ext_resource type="Script" path="res://foundLetter.cs" id="1_44qki"]
+[ext_resource type="Texture2D" uid="uid://p4uamd7xll8s" path="res://Old Letter Asset.png" id="1_ik0ja"]
+
+[node name="FoundLetter" type="CanvasLayer"]
+script = ExtResource("1_44qki")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 549.0
+offset_top = 11.0
+offset_right = 1702.0
+offset_bottom = 1275.0
+scale = Vector2(0.785717, 0.806407)
+texture = ExtResource("1_ik0ja")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.013

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://5qggv781o7h8"]
+
+[ext_resource type="Script" path="res://cellar.cs" id="1_52guf"]
+[ext_resource type="PackedScene" uid="uid://c3f0nsfrdbis0" path="res://player.tscn" id="1_vpy67"]
+[ext_resource type="PackedScene" uid="uid://r7fgcg8cmn8" path="res://ghost.tscn" id="3_8uujj"]
+[ext_resource type="PackedScene" uid="uid://bp22thcg2nqx6" path="res://orb.tscn" id="4_yo2vs"]
+[ext_resource type="PackedScene" uid="uid://dau8c3qpok82p" path="res://game_overlay.tscn" id="5_wn0sq"]
+[ext_resource type="Texture2D" uid="uid://cmnsaiae443eq" path="res://Basement Room Isometric 2.png" id="6_uvuww"]
+
+[node name="Cellar" type="Node2D"]
+script = ExtResource("1_52guf")
+
+[node name="Player" parent="." instance=ExtResource("1_vpy67")]
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(333, 753)
+
+[node name="Ghost" parent="." instance=ExtResource("3_8uujj")]
+z_index = 3
+position = Vector2(1382, 417)
+scale = Vector2(1, 1.36)
+OrbScene = ExtResource("4_yo2vs")
+
+[node name="GameOverlay" parent="." instance=ExtResource("5_wn0sq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1013, 536)
+scale = Vector2(1.51638, 0.860488)
+texture = ExtResource("6_uvuww")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 46.0
+offset_bottom = 43.0
+scale = Vector2(50.2, 26.52)
+color = Color(0, 0, 0, 1)
+
+[connection signal="PlayerDamaged" from="Player" to="GameOverlay" method="_on_player_player_damaged"]

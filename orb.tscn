@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp22thcg2nqx6"]
+
+[ext_resource type="Script" path="res://orb.cs" id="1_dpwwe"]
+[ext_resource type="Texture2D" uid="uid://ceumo1g2f3t81" path="res://ghostOrb.svg" id="1_k5olf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7had"]
+radius = 22.0
+
+[node name="Orb" type="CharacterBody2D"]
+script = ExtResource("1_dpwwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k5olf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w7had")

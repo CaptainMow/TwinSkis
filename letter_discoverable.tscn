@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://kmw7s0hhystw"]
+
+[ext_resource type="Script" path="res://LetterDiscoverable.cs" id="1_yyxuy"]
+[ext_resource type="PackedScene" uid="uid://dxtq5gx3pnpys" path="res://found_letter.tscn" id="2_kf8vw"]
+[ext_resource type="Texture2D" uid="uid://p4uamd7xll8s" path="res://Old Letter Asset.png" id="2_xwg5i"]
+
+[node name="LetterDiscoverable" type="Area2D"]
+script = ExtResource("1_yyxuy")
+foundLetterScene = ExtResource("2_kf8vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.0916614, 0.103655)
+texture = ExtResource("2_xwg5i")

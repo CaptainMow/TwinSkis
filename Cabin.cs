@@ -14,6 +14,9 @@ public partial class Cabin : Node2D
 	
 		var startPosition = GetNode<Marker2D>("StartPosition");
 		player.Start(startPosition.Position);
+
+		var door = GetNode<Area2D>("Door");
+		door.GetNode<ColorRect>("ColorRect").Visible = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,20 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtplijtdyj2tn"]
+[gd_scene load_steps=7 format=3 uid="uid://dtplijtdyj2tn"]
 
 [ext_resource type="Script" path="res://mainScene.cs" id="1_1dmvs"]
 [ext_resource type="PackedScene" uid="uid://c3f0nsfrdbis0" path="res://player.tscn" id="2_hl8ue"]
 [ext_resource type="PackedScene" uid="uid://cmgyo1gj5utoc" path="res://door.tscn" id="3_wc6t2"]
+[ext_resource type="PackedScene" uid="uid://dau8c3qpok82p" path="res://game_overlay.tscn" id="4_hno7c"]
+[ext_resource type="Texture2D" uid="uid://p2l7r2juop2w" path="res://Outdoor Asset.png" id="5_4vqw6"]
+[ext_resource type="PackedScene" uid="uid://kmw7s0hhystw" path="res://letter_discoverable.tscn" id="6_u6va5"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_1dmvs")
 
 [node name="Player" parent="." instance=ExtResource("2_hl8ue")]
+scale = Vector2(2.22485, 1.90636)
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(547, 284)
+position = Vector2(681, 853)
 
 [node name="Door" parent="." instance=ExtResource("3_wc6t2")]
-position = Vector2(907, 2)
+z_index = -1
+position = Vector2(990, 418)
 NewScenePath = "res://cabin.tscn"
 
 [node name="DoorPosition" type="Marker2D" parent="."]
-position = Vector2(948, 38)
+position = Vector2(1034, 495)
+
+[node name="GameOverlay" parent="." instance=ExtResource("4_hno7c")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(968, 482)
+scale = Vector2(1.14517, 0.910291)
+texture = ExtResource("5_4vqw6")
+
+[node name="LetterDiscoverable" parent="." instance=ExtResource("6_u6va5")]
+position = Vector2(549, 725)
+rotation = 1.53748
+scale = Vector2(0.165549, 1)
+
+[connection signal="PlayerDamaged" from="Player" to="GameOverlay" method="_on_player_player_damaged"]
